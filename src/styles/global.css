@@ -1,5 +1,5 @@
 * {
-  margin: 0;
+  margin: 0.5rem;
   padding: 0;
   box-sizing: border-box;
   list-style-type: "";
@@ -22,6 +22,7 @@ html {
 
   --button-primary-color: #de5f18;
   --button-secondary-color: #056dc4;
+  --button-hover-color: #F5F5F5;
 
   --img-text-color: #f19748;
 
@@ -41,6 +42,7 @@ html {
   --fontsize-h3: 3.5rem;
   --fontsize-h4: 2.5rem;
   --fontsize-p: 1.2rem;
+  --fontsize-button: 1rem;
 
   /* SPACING */
   --space-xxxs: 0.25rem;
@@ -53,3 +55,5 @@ html {
   --space-xxl: 2.5rem;
   --space-xxxl: 3rem;
 }
+
+
