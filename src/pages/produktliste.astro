@@ -1,0 +1,18 @@
+---
+import Navigation from "../components/Navigation.astro";
+const key =
+"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
+
+const location = await fetch(
+  `https://nfkqpbrjomlkbglvtqxb.supabase.co`,
+  {
+    method: "GET",
+    headers: {
+      apikey: key,
+    },
+  }
+).then(response =>response.json());
+console.log(location)
+---
+
+<Navigation/>
