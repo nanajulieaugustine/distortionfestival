@@ -2,3 +2,42 @@
 
 ---
 
+<header>
+  <div class="container">
+    <div class="subcontainer">
+      <nav class="navbar">
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a href="/"><img class="logo" src="/logo-large.webp" alt="Logo"></a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="/index.astro">Forside</a></li>
+          <li class="nav-item"><a class="nav-link" href="/produktliste.astro">Produktliste</a></li>
+          <li class="nav-item"><a class="nav-link" href="/single-view.astro">Singleview</a></li>
+  
+        </ul>
+        <div class="hamburger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<script>
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  });
+
+  document.querySelectorAll(".nav-link").forEach((n) =>
+    n.addEventListener("click", () => {
+      hamburger.classList.remove("active");
+      navMenu.classList.remove("active");
+    })
+  );
+</script>
