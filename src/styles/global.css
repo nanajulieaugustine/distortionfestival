@@ -22,7 +22,7 @@ html {
 
   --button-primary-color: #de5f18;
   --button-secondary-color: #056dc4;
-  --button-hover-color: #F5F5F5;
+  --button-hover-color: #f5f5f5;
 
   --img-text-color: #f19748;
 
@@ -56,4 +56,132 @@ html {
   --space-xxxl: 3rem;
 }
 
+/* HEADER */
+.logo {
+  width: 80px;
+  height: auto;
+}
 
+ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+li {
+  display: inline;
+}
+
+li a {
+  font-family: "Raleway", sans-serif;
+  color: black;
+  font-size: 20px;
+  text-align: right;
+  text-decoration: none;
+  justify-content: space-evenly;
+  border-radius: 40px;
+  padding: 20px;
+}
+
+.navbar li a:hover {
+  color: #f28181;
+}
+
+a.active {
+  color: #f28181;
+}
+
+header {
+  background-color: white;
+  position: sticky;
+  padding: 0.8rem 2rem;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.subcontainer {
+  width: auto;
+  margin: auto;
+}
+
+.navbar {
+  width: 100%;
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.hamburger {
+  display: block;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 3px;
+  margin: 5px 0;
+  transition: all 0.8s ease;
+  background-color: black;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-menu {
+  position: absolute;
+  left: -100%;
+  top: 88px;
+  gap: 0;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  text-align: center;
+  transition: 0.3s;
+  z-index: 2;
+}
+
+.nav-item {
+  margin: 16px 0;
+}
+
+.nav-menu.active {
+  left: 0;
+}
+
+@media (min-width: 1201px) {
+  .nav-menu {
+    position: static;
+    flex-direction: row;
+    width: auto;
+    text-align: right;
+    gap: 20px;
+    background-color: transparent;
+  }
+
+  .nav-item {
+    margin: 0;
+  }
+}
