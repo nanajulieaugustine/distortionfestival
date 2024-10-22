@@ -21,6 +21,9 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <Header />
+    <div>
+      <img class="index_1" src="../images/index1.webp" alt="index1">
+    </div>
     <h1>DISTORTION</h1>
     <h1>4-8 JUNE 2025</h1>
     <Button variant="primary" size="medium">BUY TICKETS HERE</Button>
@@ -45,13 +48,19 @@ import Footer from "../components/Footer.astro";
         </p>
       </div>
       <div>
-        <img src="../images/index2.webp" alt="distortion" />
+        <img class="index_2" src="../images/index2.webp" alt="distortion" />
       </div>
     </div>
     <Footer />
   </body>
   <style>
-    img {
+
+      .index_1 {
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+    }
+    .index_2 {
       max-width: 100%;
       width: 50%;
       height: 100%;
