@@ -6,6 +6,8 @@ import Button from "../components/Button.astro";
 import Header from "../components/Header.astro";
 
 import Footer from "../components/Footer.astro";
+
+import Countdown from "../components/Countdown.astro";
 ---
 
 <html lang="en">
@@ -21,12 +23,16 @@ import Footer from "../components/Footer.astro";
   </head>
   <body>
     <Header />
-    <div>
+    <div class="index_container">
       <img class="index_1" src="../images/index1.webp" alt="index1" />
+    <h1>DISTORTION <br> 4-8 JUNE 2025</h1>
+
+    <div class="button_ticket">
+  <Button variant="primary" size="medium">BUY TICKETS HERE</Button>
     </div>
-    <h1>DISTORTION</h1>
-    <h1>4-8 JUNE 2025</h1>
-    <Button variant="primary" size="medium">BUY TICKETS HERE</Button>
+    </div>
+    
+  <Countdown />
 
     <div class="citat_container">
       <h4>DISTORTION FESTIVAL IS WHERE WE CELEBRATE THE EARLY DAYS OF SUMMER WITH GOOD MUSIC & FRIENDS IN THE STREETS OF COPENHAGEN!</h4>
@@ -66,7 +72,7 @@ import Footer from "../components/Footer.astro";
       margin-left: 3rem;
     }
 
-    h1 {
+   h1 {
       font-size: var(--fontsize-h1);
       color: var(--header1-color);
       font-family: Arial, Helvetica, sans-serif;
@@ -77,7 +83,11 @@ import Footer from "../components/Footer.astro";
       font-size: var(--fontsize-h4);
       font-family: Arial, Helvetica, sans-serif;
       margin: 6rem;
+    }
+
+    .citat_container{
       background-image: url("../images/index3.webp");
+      background-size: contain;
       background-size: cover;
       background-position: center;
     }
@@ -117,16 +127,41 @@ import Footer from "../components/Footer.astro";
       .citat_container h4 {
         color: var(--img-text-color);
         text-align: center;
-        font-size: var(--fontsize-h4);
+        font-size: var(--fontsize-h3-mobile);
         font-family: Arial, Helvetica, sans-serif;
         margin: 1rem;
       }
+       .citat_container{
+        padding: 10px;
+       }
 
-      h1 {
-        font-size: var(--fontsize-h2);
+    h1{
+        font-size: var(--fontsize-h1-mobile);
         color: var(--header1-color);
         font-family: Arial, Helvetica, sans-serif;
+        grid-column: 1;
+        grid-row: 1;
       }
-    }
+      .index_container{
+       display: grid;
+       grid-template-columns: 1fr;
+       grid-template-rows: 1fr;
+      }
+.index_1{
+       grid-column: 1;
+        grid-row: 1;
+}
+.button_ticket{
+  grid-column: 1;
+        grid-row: 1;
+   place-self: end center;
+   margin-bottom: 50px;
+}
+ h1{
+  grid-row: 1;
+  align-self: center; 
+  margin-left: 20px;
+ }
+      }
   </style>
 </html>

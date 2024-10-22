@@ -56,7 +56,7 @@
 <style>
     /* HEADER */
 .logo {
-  width: 50px;
+  width: 30px;
   height: auto;
 }
 .date {
@@ -65,7 +65,7 @@
 }
 
 .date p {
-    font-size: 18px;
+    font-size: 10px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .menu-section {
@@ -75,7 +75,7 @@
 
 /* Billetikon styling */
 .ticket-icon img {
-    height: 38px; /* Tilpas størrelsen på billetikonet */
+    height: 20px; /* Tilpas størrelsen på billetikonet */
     cursor: pointer;
     margin-right: 1rem;
     margin-top: 5px;
@@ -110,8 +110,9 @@ a.active {
 
 header {
   background-color: transparent;
-  position: sticky;
+  position: absolute;
 padding: 0.8rem 0.8rem;
+width: 100%;
 }
 
 .container {
@@ -126,7 +127,7 @@ padding: 0.8rem 0.8rem;
 
 .navbar {
   width: 100%;
-  min-height: 70px;
+  min-height: 7px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -142,6 +143,7 @@ padding: 0.8rem 0.8rem;
 .hamburger {
   display: block;
   cursor: pointer;
+  
 }
 
 .bar {
@@ -190,6 +192,31 @@ padding: 0.8rem 0.8rem;
     .logo {
   width: 65px;
   height: auto;
+}
+.logo {
+  width: 50px;
+  height: auto;
+}
+.date {
+    flex-grow: 1;
+    text-align: center;
+}
+
+.date p {
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.menu-section {
+    display: flex;
+    align-items: center;
+}
+
+/* Billetikon styling */
+.ticket-icon img {
+    height: 38px; /* Tilpas størrelsen på billetikonet */
+    cursor: pointer;
+    margin-right: 1rem;
+    margin-top: 5px;
 }
 }
 </style>
