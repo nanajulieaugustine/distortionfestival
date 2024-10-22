@@ -22,6 +22,62 @@ import Footer from "../components/Footer.astro";
     <h1>4-8 JUNE 2025</h1>
     <Button variant="primary" size="medium">BUY TICKETS HERE</Button>
 
+    <div class="citat_container">
+      <h4>DISTORTION FESTIVAL IS WHERE WE CELEBRATE THE EARLY DAYS OF SUMMER WITH GOOD MUSIC & FRIENDS IN THE STREETS OF COPENHAGEN!</h4>
+    </div>
+
+    <div class="explore_container">
+      <h3>EXPLORE MORE</h3>
+      <Button variant="primary" size="medium">2025 SCHEDULE</Button>
+      <Button variant="primary" size="medium">2025 LINEUP</Button>
+    </div>
+
+    <div class="history_container">
+      <h4>OUR HISTORY</h4>
+      <div>
+        <p>Distortion started as an experimental party project in 1998. In 2000 it became a 5-day-long party-crawl going through one Copenhagen district per day.</p>
+        <p>
+          For the first time in 2007, we got 1,500 guests at one single street party on Enghave Plads and almost 3,000 guests at Final Party. Until then, we had never had a strategy or a budget: Distortion was just for fun. In 2012 we
+          became a not-for-profit Foundation and in 2013, we were finally ready to soon be known around the world as the craziest party on the planet.
+        </p>
+      </div>
+      <div>
+        <img src="/public/logo-large.webp" alt="distortion" />
+      </div>
+    </div>
     <Footer />
   </body>
+  <style>
+    .citat_container h4 {
+      color: var(--img-text-color);
+      text-align: center;
+      font-size: var(--fontsize-h4);
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 6rem;
+    }
+
+    .explore_container {
+      text-align: center;
+      font-size: var(--fontsize-h3);
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 5rem;
+    }
+
+    .history_container {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      background-color: #f9d8af;
+      padding: 1rem;
+    }
+
+    .history_container h4 {
+      font-size: var(--fontsize-h4);
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 5rem;
+    }
+
+    .history_container p {
+      font-size: var(--fontsize-p: 1.2rem;);
+    }
+  </style>
 </html>
