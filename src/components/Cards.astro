@@ -1,0 +1,37 @@
+---
+const { img } = Astro.props
+---
+
+<div class="cards">
+    <img src=`../images/${img}` alt="billede1">
+    <div>
+ <p>
+        DISTORTION Ø 2025
+    </p>
+    </div>
+    <div></div>
+    <div>
+        <img src=../images/Billetikon.webp" alt="billet">
+    </div>
+</div>
+
+
+
+
+
+<style>
+    .cards{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        background-color: var( --bg-primary-card-color);
+        margin: 0 10px; /* 0 er for top og bund, 20px er for venstre og højre */
+        margin-top: 1rem;
+}
+
+
+    .cards img{
+    aspect-ratio: 1 / 1; /* Billedets bredde og højde vil altid være ens */
+    width: 70%; /* Tilpasser bredden efter forælderelementets størrelse */
+    object-fit: cover; /* Bevarer proportioner, men beskærer billedet hvis nødvendigt */
+    }
+</style>
