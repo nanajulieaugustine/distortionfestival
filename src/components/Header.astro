@@ -7,216 +7,215 @@
     <div class="subcontainer">
       <nav class="navbar">
         <ul class="nav-menu">
-                 <li class="nav-item"><a href="/"><img class="logo" src="../images/logo.webp"
-                                    alt="logo"></a>
-                        </li>
-          <li class="nav-item"><a class="nav-link" href="/index.astro">Forside</a></li>
-          <li class="nav-item"><a class="nav-link" href="/produktliste.astro">Produktliste</a></li>
-          <li class="nav-item"><a class="nav-link" href="/single-view.astro">Singleview</a></li>
-  
+          <li class="nav-item"><a href="/"><img class="logo" src="../images/logo.webp" alt="logo" /></a></li>
+          <li class="nav-item"><a class="nav-link" href="/">Forside</a></li>
+          <li class="nav-item"><a class="nav-link" href="/produktliste">Produktliste</a></li>
+          <li class="nav-item"><a class="nav-link" href="/single-view">Singleview</a></li>
         </ul>
 
-         <a href="/"><img class="logo" src="../images/logo.webp" alt="Logo"></a>
+        <a href="/"><img class="logo" src="../images/logo.webp" alt="Logo" /></a>
 
-             <div class="date">
-        <p>4 - 8 JUNE 2025</p>
-    </div>
+        <div class="date">
+          <p>4 - 8 JUNE 2025</p>
+        </div>
 
-     <div class="menu-section">
-        <div class="ticket-icon">
-            <img src="../images/Billetikon.webp" alt="Billetikon">
-              </div>
+        <div class="menu-section">
+          <div class="ticket-icon">
+            <img src="../images/Billetikon.webp" alt="Billetikon" />
+          </div>
 
-        <div class="hamburger">
-          <div class="bar"></div>
-          <div class="bar"></div>
-          <div class="bar"></div>
+          <div class="hamburger">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+          </div>
         </div>
       </nav>
+    </div>
+
+    <script>
+      const hamburger = document.querySelector(".hamburger");
+      const navMenu = document.querySelector(".nav-menu");
+
+      hamburger.addEventListener("click", () => {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+      });
+
+      document.querySelectorAll(".nav-link").forEach((n) =>
+        n.addEventListener("click", () => {
+          hamburger.classList.remove("active");
+          navMenu.classList.remove("active");
+        })
+      );
+    </script>
+
+    <style>
+      /* HEADER */
+      .logo {
+        width: 30px;
+        height: auto;
+      }
+      .date {
+        flex-grow: 1;
+        text-align: center;
+      }
+
+      .date p {
+        font-size: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      .menu-section {
+        display: flex;
+        align-items: center;
+      }
+
+      /* Billetikon styling */
+      .ticket-icon img {
+        height: 28px; /* Tilpas størrelsen på billetikonet */
+        cursor: pointer;
+        margin-right: 1rem;
+        margin-top: 5px;
+      }
+      ul {
+        list-style-type: none;
+        text-align: right;
+      }
+
+      li {
+        display: inline;
+      }
+
+      li a {
+        font-family: "Raleway", sans-serif;
+        color: black;
+        font-size: 20px;
+        text-align: right;
+        text-decoration: none;
+        justify-content: space-evenly;
+        border-radius: 40px;
+        padding: 20px;
+      }
+
+      .navbar li a:hover {
+        color: #f28181;
+      }
+
+      a.active {
+        color: #f28181;
+      }
+
+      header {
+        background-color: transparent;
+        position: absolute;
+        padding: 0.8rem 0.8rem;
+        width: 100%;
+      }
+
+      .container {
+        width: 100%;
+        margin: auto;
+      }
+
+      .subcontainer {
+        width: auto;
+        margin: auto;
+      }
+
+      .navbar {
+        width: 100%;
+        min-height: 7px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+
+      .bar {
+        display: block;
+        width: 30px;
+        height: 2px;
+        margin: 5px 0;
+        transition: all 0.8s ease;
+        background-color: black;
+      }
+
+      .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+      }
+
+      .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+      }
+
+      .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+
+      .nav-menu {
+        position: absolute;
+        left: -200%;
+        top: 0;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        z-index: 2;
+      }
+
+      .nav-item {
+        margin: 16px 0;
+      }
+
+      .nav-menu.active {
+        left: 0;
+      }
+
+      /* DESKTOP */
+      @media (min-width: 750px) {
+        .logo {
+          width: 65px;
+          height: auto;
+        }
+        .logo {
+          width: 50px;
+          height: auto;
+        }
+        .date {
+          flex-grow: 1;
+          text-align: center;
+        }
+
+        .date p {
+          font-size: 18px;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+        .menu-section {
+          display: flex;
+          align-items: center;
+        }
+
+        /* Billetikon styling */
+        .ticket-icon img {
+          height: 38px; /* Tilpas størrelsen på billetikonet */
+          cursor: pointer;
+          margin-right: 1rem;
+          margin-top: 5px;
+        }
+      }
+    </style>
   </div>
 </header>
-
-<script>
-  const hamburger = document.querySelector(".hamburger");
-  const navMenu = document.querySelector(".nav-menu");
-
-  hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("active");
-    navMenu.classList.toggle("active");
-  });
-
-  document.querySelectorAll(".nav-link").forEach((n) =>
-    n.addEventListener("click", () => {
-      hamburger.classList.remove("active");
-      navMenu.classList.remove("active");
-    })
-  );
-</script>
-
-<style>
-    /* HEADER */
-.logo {
-  width: 30px;
-  height: auto;
-}
-.date {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.date p {
-    font-size: 10px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.menu-section {
-    display: flex;
-    align-items: center;
-}
-
-/* Billetikon styling */
-.ticket-icon img {
-    height: 28px; /* Tilpas størrelsen på billetikonet */
-    cursor: pointer;
-    margin-right: 1rem;
-    margin-top: 5px;
-}
-ul {
-  list-style-type: none;
-  text-align: right;
-}
-
-li {
-  display: inline;
-}
-
-li a {
-  font-family: "Raleway", sans-serif;
-  color: black;
-  font-size: 20px;
-  text-align: right;
-  text-decoration: none;
-  justify-content: space-evenly;
-  border-radius: 40px;
-  padding: 20px;
-}
-
-.navbar li a:hover {
-  color: #f28181;
-}
-
-a.active {
-  color: #f28181;
-}
-
-header {
-  background-color: transparent;
-  position: absolute;
-padding: 0.8rem 0.8rem;
-width: 100%;
-}
-
-.container {
-  width: 100%;
-  margin: auto;
-}
-
-.subcontainer {
-  width: auto;
-  margin: auto;
-}
-
-.navbar {
-  width: 100%;
-  min-height: 7px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.nav-menu {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-}
-
-.hamburger {
-  display: block;
-  cursor: pointer;
-}
-
-.bar {
-  display: block;
-  width: 30px;
-  height: 2px;
-  margin: 5px 0;
-  transition: all 0.8s ease;
-  background-color: black;
-}
-
-.hamburger.active .bar:nth-child(2) {
-  opacity: 0;
-}
-
-.hamburger.active .bar:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
-}
-
-.hamburger.active .bar:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
-}
-
-.nav-menu {
-  position: absolute;
-  left: -200%;
-  top: 0;
-  gap: 0;
-  flex-direction: column;
-  background-color: white;
-  width: 100%;
-  text-align: center;
-  transition: 0.3s;
-  z-index: 2;
-}
-
-.nav-item {
-  margin: 16px 0;
-}
-
-.nav-menu.active {
-  left: 0;
-}
-
-/* DESKTOP */
-@media (min-width: 750px){
-    .logo {
-  width: 65px;
-  height: auto;
-}
-.logo {
-  width: 50px;
-  height: auto;
-}
-.date {
-    flex-grow: 1;
-    text-align: center;
-}
-
-.date p {
-    font-size: 18px;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.menu-section {
-    display: flex;
-    align-items: center;
-}
-
-/* Billetikon styling */
-.ticket-icon img {
-    height: 38px; /* Tilpas størrelsen på billetikonet */
-    cursor: pointer;
-    margin-right: 1rem;
-    margin-top: 5px;
-}
-}
-</style>

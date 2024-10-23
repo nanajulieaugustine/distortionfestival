@@ -1,29 +1,37 @@
 ---
 import Navigation from "../components/Navigation.astro";
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg"
+// const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
 
-const locations = await fetch(
-  `https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/locations`,
-  {
-    method: "GET",
-    headers: {
-      apikey: key,
-    },
-  }
-).then(response =>response.json());
+// const locations = await fetch(`https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/locations`, {
+//   method: "GET",
+//   headers: {
+//     apikey: key,
+//   },
+// }).then((response) => response.json());
 
-console.log(locations)
+// console.log(locations);
+
+import "../styles/global.css";
+
+import Dropdown from "../components/Dropdown.astro";
+import MainLayout from "../Layouts/MainLayout.astro";
 ---
 
-<Navigation/>
+<MainLayout>
+  <Navigation />
 
-<ul>
+  <!-- <ul>
   {
-  	locations.map((locations) => (
+    locations.map((locations) => (
       <li>
-      <h3>{locations.name}</h3>
-      <p>{locations.description}</p>
+        <h3>{locations.name}</h3>
+        <p>{locations.description}</p>
       </li>
-  	))
+    ))
   }
-</ul>
+</ul> -->
+
+  <h1>SCHEDULE</h1>
+  <h2>FILTER BY WEEK DAY</h2>
+  <Dropdown />
+</MainLayout>
