@@ -28,6 +28,7 @@
   .dropdown {
     position: relative;
     display: inline-block;
+    padding-left: 5rem;
   }
 
   /* Dropdown content (hidden by default) */
@@ -67,10 +68,12 @@
 
   // Close the dropdown if the user clicks outside of it
   window.onclick = function (event) {
+    // Check if the click is not on the button
     if (!event.target.matches(".dropbtn")) {
       var dropdowns = document.getElementsByClassName("dropdown-content");
       for (var i = 0; i < dropdowns.length; i++) {
         var openDropdown = dropdowns[i];
+        // Remove the show class from the opened dropdown
         if (openDropdown.classList.contains("show")) {
           openDropdown.classList.remove("show");
         }

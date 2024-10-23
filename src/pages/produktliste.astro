@@ -14,13 +14,16 @@ import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
 
 import Dropdown from "../components/Dropdown.astro";
+
 import MainLayout from "../Layouts/MainLayout.astro";
+import Cards from "../components/Cards.astro";
 ---
 
 <MainLayout>
-  <Navigation />
+  <body>
+    <Navigation />
 
-  <!-- <ul>
+    <!-- <ul>
   {
     locations.map((locations) => (
       <li>
@@ -31,7 +34,24 @@ import MainLayout from "../Layouts/MainLayout.astro";
   }
 </ul> -->
 
-  <h1>SCHEDULE</h1>
-  <h2>FILTER BY WEEK DAY</h2>
-  <Dropdown />
+    <h1>SCHEDULE</h1>
+    <h2>FILTER BY WEEK DAY</h2>
+    <p>Click the ticket icon to easily purchase your festival tickets and secure your spot!</p>
+    <Dropdown />
+
+      
+
+
+  </body>
 </MainLayout>
+
+<style>
+  /* MOBILE */
+  @media (max-width: 600px) {
+  }
+
+  /* DESKTOP */
+
+  @media (min-width: 600px) {
+  }
+</style>
