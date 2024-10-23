@@ -34,7 +34,7 @@ const { img, title, billet } = Astro.props
     }
 
 .billet{
-    width: 30px;
+    width: 20px;
     margin-top: 25px;
     margin-left: 50px;
       cursor: pointer;
@@ -45,4 +45,27 @@ const { img, title, billet } = Astro.props
 margin-top: 1rem;
 font-size: 10px;
     }
+
+     @media (min-width: 600px) {
+            .cards{
+        margin: 0 15px; /* 0 er for top og bund, 20px er for venstre og højre */
+        margin-top: 1rem;
+          cursor: pointer;
+}
+
+    .cards p{
+margin-top: 3.6rem;
+font-size: 30px;
+    }
+    .billeder{
+    width: 50%; /* Tilpasser bredden efter forælderelementets størrelse */
+    object-fit: cover; /* Bevarer proportioner, men beskærer billedet hvis nødvendigt */
+    }
+.billet{
+    width: 60px;
+    margin-top: 65px;
+    margin-left: 250px;
+      cursor: pointer;
+}
+  }
 </style>
