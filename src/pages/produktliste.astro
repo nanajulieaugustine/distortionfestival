@@ -13,9 +13,8 @@ import Navigation from "../components/Navigation.astro";
 
 import "../styles/global.css";
 
-import Dropdown from "../components/Dropdown.astro";
-
 import MainLayout from "../Layouts/MainLayout.astro";
+
 import Cards from "../components/Cards.astro";
 ---
 
@@ -37,15 +36,24 @@ import Cards from "../components/Cards.astro";
     <h1>SCHEDULE</h1>
     <h2>FILTER BY WEEK DAY</h2>
     <p>Click the ticket icon to easily purchase your festival tickets and secure your spot!</p>
-    <Dropdown />
 
-      
+      <Cards img="produkt1.webp" title="DISTORTION Ø 2025" billet="Billetikon.webp"/>
+      <Cards img="produkt2.webp" title="DISTORTION X RÅDHUSPLADSEN 2025"billet="Billetikon.webp"/>
+          <Cards img="produkt3.webp"title="NØRREBRO STREET PARTY 2025 (free)"/>
+              <Cards img="produkt4.webp" title="DISTORTION X - NØRREBRO 2025" billet="Billetikon.webp"/>
+                  <Cards img="produkt5.webp" title="DISTORTION CLUB 2025"billet="Billetikon.webp"/>
+                      <Cards img="produkt6.webp" title="ACTION HYGGE 2025 (free)"/>
+                          <Cards img="produkt7.webp" title="HAVNEFEST 2025 (free)"/>
+
 
 
   </body>
 </MainLayout>
 
 <style>
+  h1{
+    margin-top: 50px;
+  }
   /* MOBILE */
   @media (max-width: 600px) {
   }
