@@ -1,71 +1,67 @@
 ---
-const { img, title, billet } = Astro.props
+const { img, title, billet } = Astro.props;
 ---
 
 <div class="cards">
-    <img class="billeder" src=`../images/${img}` alt="billede">
-    <div>
-       <p>{title}</p>
-    </div>
-    <div></div>
-    <div>
-         <img class="billet" src=`../images/${billet}` alt="ikon">
-    </div>
+  <img class="billeder" src=`../images/${img}` alt="billede" />
+  <div>
+    <p>{title}</p>
+  </div>
+  <div></div>
+  <div>
+    <img class="billet" src=`../images/${billet}` alt="ikon" />
+  </div>
 </div>
 
-
-
-
-
 <style>
-    .cards{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        background-color: var( --bg-primary-card-color);
-        margin: 0 10px; /* 0 er for top og bund, 20px er for venstre og højre */
-        margin-top: 1rem;
-          cursor: pointer;
-
-}
-    .billeder{
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: var(--bg-primary-card-color);
+    margin: 0 10px; /* 0 er for top og bund, 20px er for venstre og højre */
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+  .billeder {
     aspect-ratio: 1 / 1; /* Billedets bredde og højde vil altid være ens */
     width: 70%; /* Tilpasser bredden efter forælderelementets størrelse */
     object-fit: cover; /* Bevarer proportioner, men beskærer billedet hvis nødvendigt */
-    }
+  }
 
-.billet{
+  .billet {
     width: 20px;
     margin-top: 25px;
     margin-left: 50px;
+    cursor: pointer;
+  }
+
+  .cards p {
+    margin-top: 1rem;
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  @media (min-width: 600px) {
+    .cards {
+      margin: 0 15px; /* 0 er for top og bund, 20px er for venstre og højre */
+      margin-top: 1rem;
       cursor: pointer;
-
-}
-
-    .cards p{
-margin-top: 1rem;
-font-size: 10px;
     }
 
-     @media (min-width: 600px) {
-            .cards{
-        margin: 0 15px; /* 0 er for top og bund, 20px er for venstre og højre */
-        margin-top: 1rem;
-          cursor: pointer;
-}
-
-    .cards p{
-margin-top: 3.6rem;
-font-size: 30px;
+    .cards p {
+      margin-top: 3.6rem;
+      font-size: 30px;
     }
-    .billeder{
-    width: 50%; /* Tilpasser bredden efter forælderelementets størrelse */
-    object-fit: cover; /* Bevarer proportioner, men beskærer billedet hvis nødvendigt */
+    .billeder {
+      width: 50%; /* Tilpasser bredden efter forælderelementets størrelse */
+      object-fit: cover; /* Bevarer proportioner, men beskærer billedet hvis nødvendigt */
     }
-.billet{
-    width: 60px;
-    margin-top: 65px;
-    margin-left: 250px;
+    .billet {
+      width: 60px;
+      margin-top: 65px;
+      margin-left: 250px;
       cursor: pointer;
-}
+    }
   }
 </style>
