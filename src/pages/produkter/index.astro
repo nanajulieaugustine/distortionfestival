@@ -1,6 +1,7 @@
 ---
-import MainLayout from "../Layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
+import MainLayout from "../../Layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import Cards from "../../components/Cards.astro";
 
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
 
@@ -19,10 +20,8 @@ console.log(locations);
   <div class="distortion_name">
     <ul>
       {
-        locations.map((locations) => (
-          <li>
-            <h2>{locations.name}</h2>
-          </li>
+        locations.map((location) => (
+ <Cards  img = {location.img} title = {location.name} billet={location.entry} link={location.slug}/>
         ))
       }
     </ul>
@@ -162,7 +161,4 @@ console.log(locations);
     transform: translateY(50px);
   }
 
-  
-
 </style>
-
