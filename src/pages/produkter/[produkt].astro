@@ -1,174 +1,26 @@
 ---
 import MainLayout from '../../Layouts/MainLayout.astro';
+
 export async function getStaticPaths() {
-  const url = "..."
+  const url = "https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/locations";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
+
   const options = {
     headers: {
-      apikey: "..."
+      apikey:key
     }
   }
   
-  const artists = await fetch(url, options).then(res=>res.json())
+  const produkter = await fetch(url, options).then(res=>res.json())
   
-  return artists.map(artist => ({
-      params: { artist: artist.slug }, // [artist]=artist.slug
-      props: { artist } // send al data med som props
+  return produkter.map(produkt => ({
+      params: { produkt: produkt.slug }, // [produkt]=produkt.slug
+      props: { produkt } // send al data med som props
     }))
 }
 
-const { artist } = Astro.props;
-console.log(artist) // artist.name, artist.image osv.
+const { produkt } = Astro.props;
+console.log(produkt) // produkt.name, produkt.image osv.
 ---
-<h1>{artist.name}</h1>
-<MainLayout>
+<h1>{produkt.name}</h1>
 
-    <div class="distortion_name">
-      <ul>
-        {
-          locations.map((locations) => (
-            <li>
-              <h2>{locations.name}</h2>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  
-    <div class="about_container">
-        {
-          locations.map((locations) => (
-            <div>
-              <h4>ABOUT</h4>
-              <p>{locations.description}</p>
-            </div>
-            <div>
-              <h4>ADDRESS</h4>
-              <p>{locations.adress}</p>
-              <h4>OPENING HOURS</h4>
-              <p>{locations.opening_hours}</p>
-            </div>
-            <div></div>
-          ))
-        }
-    </div>
-  
-    <div class="entry_container">
-      <ul>
-        {
-          locations.map((locations) => (
-            <li>
-              <h2 class="entry_h2">{locations.entry}</h2>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-    <div class="button_container">
-      <div class="button_ticket">
-        <Button variant="primary" size="medium">2025 LINEUP</Button>
-      </div>
-    </div>
-    <div class="map_container">
-      <div class="map_text">
-      <h3 class="map_h3">FIND US THROUGH OUR MAP</h3>
-        <p class="map_p">CLICK ON THE VENUE THAT YOU WOULD LIKE TO KNOW MORE ABOUT.</p>
-      </div>
-      <div>
-        <img class="map" src="../images/map.png" alt="map" />
-      </div>
-    </div>
-    <div class="gallery_container">
-      <div class="gallery_background">
-        <h1 class="gallery_h1">GALLERY</h1>
-        <img class="gallery_img" src="../images/gallery_img.webp" alt="gallery_dummy" />
-      </div>
-    </div>
-    
-  </MainLayout>
-  
-  <style>
-  
-    /*desktop*/
-  
-    .about_container{
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr;
-      background-color: var(--bg-primary-card-color);
-      margin-top: 2rem;
-      margin-bottom: 3rem;
-    }
-  
-    .entry_container{
-      background: linear-gradient(rgba(76, 103, 95, 0.5), rgba(46, 45, 45, 0.5)), url("../images/index3.webp"), no-repeat 50% 0% fixed;
-      background-size: 100%;
-      background-position: center;
-      padding:1rem;
-      margin-bottom: 2rem;
-    }
-  
-    .entry_h2{
-      color: var(--button-primary-color);
-      text-align: center;
-    }
-  
-    .button_container{
-      display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-    }
-  
-    .button_ticket {
-        grid-column: 1;
-        grid-row: 1;
-        place-self: end center;
-        margin-bottom: 2rem;
-      }
-  
-    .map_container{
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      margin-top: 2rem;
-      margin-bottom: 5rem;
-    }
-  
-    .map{
-      width:90%;
-    }
-  
-    .map_h3{
-      font-size:3rem;
-      max-width:20rem;
-      margin-top:3rem;
-      margin-bottom:1rem;
-    }
-  
-    .map_text{
-      margin-left:15rem;
-    }
-  
-    .map_p{
-      max-width:20rem;
-    }
-  
-    .gallery_background{
-      background-color: var(--bg-primary-card-color);
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      height:30rem;
-    }
-  
-    .gallery_h1{
-      color: var(--button-primary-color);
-      font-size:9rem;
-      transform: rotate(-90deg) translate(60px, 50px);
-    }
-  
-    .gallery_img{
-      width:80%;
-      transform: translateY(50px);
-    }
-  
-    
-  
-  </style>
-    
