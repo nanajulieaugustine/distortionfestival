@@ -1,6 +1,7 @@
 ---
-import MainLayout from "../Layouts/MainLayout.astro";
-import Button from "../components/Button.astro";
+import MainLayout from "../../Layouts/MainLayout.astro";
+import Button from "../../components/Button.astro";
+import Cards from "../../components/Cards.astro";
 
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
 
@@ -11,49 +12,34 @@ const locations = await fetch(`https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/
   },
 }).then((response) => response.json());
 
-console.log(locations);
+//console.log(locations);
 ---
 
 <MainLayout>
 
-  <div class="distortion_name">
-    <ul>
-      {
-        locations.map((locations) => (
-          <li>
-            <h2>{locations.name}</h2>
-          </li>
-        ))
-      }
-    </ul>
-  </div>
 
   <div class="about_container">
       {
-        locations.map((locations) => (
           <div>
-            <h4>ABOUT</h4>
+            <h5>ABOUT</h5>
             <p>{locations.description}</p>
           </div>
           <div>
-            <h4>ADDRESS</h4>
+            <h5>ADDRESS</h5>
             <p>{locations.adress}</p>
-            <h4>OPENING HOURS</h4>
+            <h5>OPENING HOURS</h5>
             <p>{locations.opening_hours}</p>
           </div>
           <div></div>
-        ))
       }
   </div>
 
   <div class="entry_container">
     <ul>
       {
-        locations.map((locations) => (
           <li>
             <h2 class="entry_h2">{locations.entry}</h2>
           </li>
-        ))
       }
     </ul>
   </div>
@@ -162,7 +148,4 @@ console.log(locations);
     transform: translateY(50px);
   }
 
-  
-
 </style>
-

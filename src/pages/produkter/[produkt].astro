@@ -1,0 +1,29 @@
+---
+import MainLayout from '../../Layouts/MainLayout.astro';
+
+export async function getStaticPaths() {
+  const url = "https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/locations";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
+
+  const options = {
+    headers: {
+      apikey:key
+    }
+  }
+  
+  const locations = await fetch(url, options).then(res=>res.json())
+  
+  return locations.map(location => ({
+      params: { location: location.slug }, // [produkt]=produkt.slug
+      props: { location } // send al data med som props
+    }))
+}
+
+const { locations } = Astro.props;
+console.log(locations) // produkt.name, produkt.image osv.
+---
+    <h1>{location.name}</h1>
+    <p>{location.description}</p>
+    <p>{location.adress}</p>
+    <p>{location.opening_hours}</p>
+
