@@ -2,6 +2,7 @@
 import MainLayout from "../Layouts/MainLayout.astro";
 import Button from "../components/Button.astro";
 import Cards from "../components/Cards.astro";
+import Box from "../components/Box.astro";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
 
 const locations = await fetch(`https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/locations`, {
@@ -15,6 +16,12 @@ console.log(locations);
 ---
 
 <MainLayout>
+
+  <h1>SCHEDULE</h1>
+  <h4>FILTER BY WEEK DAY</h4>
+  <Box />
+
+  <p>Click the ticket icon to easily purchase your festival tickets and secure your spot!</p>
 
   <div class="distortion_name">
     <ul>

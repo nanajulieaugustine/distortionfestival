@@ -11,16 +11,19 @@ export async function getStaticPaths() {
     }
   }
   
-  const produkter = await fetch(url, options).then(res=>res.json())
+  const locations = await fetch(url, options).then(res=>res.json())
   
-  return produkter.map(produkt => ({
-      params: { produkt: produkt.slug }, // [produkt]=produkt.slug
-      props: { produkt } // send al data med som props
+  return locations.map(location => ({
+      params: { location: location.slug }, // [produkt]=produkt.slug
+      props: { location } // send al data med som props
     }))
 }
 
-const { produkt } = Astro.props;
-console.log(produkt) // produkt.name, produkt.image osv.
+const { locations } = Astro.props;
+console.log(locations) // produkt.name, produkt.image osv.
 ---
-<h1>{produkt.name}</h1>
+    <h1>{location.name}</h1>
+    <p>{location.description}</p>
+    <p>{location.adress}</p>
+    <p>{location.opening_hours}</p>
 
