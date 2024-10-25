@@ -12,7 +12,7 @@ const locations = await fetch(`https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/
   },
 }).then((response) => response.json());
 
-console.log(locations);
+// console.log(locations);
 ---
 
 <MainLayout>
@@ -27,7 +27,7 @@ console.log(locations);
     <ul>
       {
         locations.map((location) => (
- <Cards  img = {location.img} title = {location.name} billet={location.entry}/>
+ <Cards  img = {location.img} title = {location.name} billet={location.entry} link={location.slug}/>
         ))
       }
     </ul>

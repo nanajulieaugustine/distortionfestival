@@ -1,34 +1,42 @@
-<!-- ---
-import MainLayout from "../../Layouts/MainLayout.astro";
-import Button from "../../components/Button.astro";
-import Cards from "../../components/Cards.astro";
-
-const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
-
-const locations = await fetch(`https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/locations`, {
-  method: "GET",
-  headers: {
-    apikey: key,
-  },
-}).then((response) => response.json());
-
-//console.log(locations);
 ---
+import MainLayout from '../../Layouts/MainLayout.astro';
+import Button from '../../components/Button.astro';
 
+export async function getStaticPaths() {
+  const url = "https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/locations";
+  const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im5ma3FwYnJqb21sa2JnbHZ0cXhiIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Mjc3ODczMzMsImV4cCI6MjA0MzM2MzMzM30.AvtM_0O9qt1OKWaWdtnqaa6WJJrGI_N_E5iW3sylkEg";
+
+  const options = {
+    headers: {
+      apikey:key
+    }
+  }
+  
+  const produkter = await fetch(url, options).then(res=>res.json())
+  
+  return produkter.map(produkt => ({
+      params: { filnavn: produkt.slug }, // [produkt]=produkt.slug
+      props: { produkt } // send al data med som props
+    }))
+}
+
+const { produkt } = Astro.props;
+console.log(produkt) // produkt.name, produkt.image osv.
+---
 <MainLayout>
 
-
-  <div class="about_container">
+  <h1>{produkt.name}</h1>
+    <div class="about_container">
       {
           <div>
             <h5>ABOUT</h5>
-            {/* <p>{locations.description}</p> */}
+            <p>{produkt.description}</p>
           </div>
           <div>
             <h5>ADDRESS</h5>
-            {/* <p>{locations.adress}</p> */}
+            <p>{produkt.adress}</p>
             <h5>OPENING HOURS</h5>
-            {/* <p>{locations.opening_hours}</p> */}
+            <p>{produkt.opening_hours}</p>
           </div>
           <div></div>
       }
@@ -70,12 +78,21 @@ const locations = await fetch(`https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/
 
   /*desktop*/
 
+  h1{
+    margin-top: 8rem;
+    margin-bottom: 2rem;
+    margin-left:1rem;
+  }
+
   .about_container{
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     background-color: var(--bg-primary-card-color);
-    margin-top: 10rem;
     margin-bottom: 3rem;
+  }
+
+  .about_container p{
+    margin:1rem;
   }
 
   .entry_container{
@@ -148,4 +165,4 @@ const locations = await fetch(`https://nfkqpbrjomlkbglvtqxb.supabase.co/rest/v1/
     transform: translateY(50px);
   }
 
-</style> -->
+</style>

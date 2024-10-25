@@ -1,7 +1,7 @@
 ---
 const { img, title, billet, link } = Astro.props;
 ---
-<a href={link}>
+<a href={"produkter/"+link}>
 <div class="cards">
   <img class="billeder" src={`../images/${img}`} alt="billede" />
     <p>{title}</p>
