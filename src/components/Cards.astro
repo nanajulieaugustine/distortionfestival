@@ -5,6 +5,7 @@ const { img, title, billet, link } = Astro.props;
 <div class="cards">
   <img class="billeder" src={`../images/${img}`} alt="billede" />
     <p>{title}</p>
+    <div></div>
   <div class="billet">
     {billet && <p>{billet}</p> || <img src="../images/Billetikon.webp" alt="" />}
   </div>
